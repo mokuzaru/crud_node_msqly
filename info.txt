@@ -1,0 +1,16 @@
+instalar modulos
+
+npm i express express-handlebars express-session mysql express-mysql-session morgan bcryptjs passport passport-local timeago.js connect-flash express-validator
+
+*morgan handle errors message
+*mysql handle mysql calls
+* passport-local for use local validattion (without fb etc)
+
+Modulo de desarrollo
+
+npm i nodemon -D
+
+
+Para correr el proyecto
+npm run dev
+node src/
