@@ -7,10 +7,12 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
 const passport = require('passport');
 const { database } = require('./keys');
+
 //initializations
 const app = express();
 require('./lib/passport');
-//serrings
+
+//settings
 app.set('port', process.env.PORT|| 4000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
@@ -40,6 +42,7 @@ app.use(passport.session());
 app.use((req, res, next) =>{
   app.locals.success = req.flash('success');
   app.locals.message = req.flash('message');
+  app.locals.user = req.user;
   next();
 });
 
